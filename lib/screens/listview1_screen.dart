@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Listview1Screen extends StatelessWidget {
+
+  final options = const ['Megaman' ,'Metal Gear', 'Super Smash', 'Final Fantasy'];
    
   const Listview1Screen({Key? key}) : super(key: key);
   
@@ -11,19 +13,13 @@ class Listview1Screen extends StatelessWidget {
         title: Text('List view Tipo 1'),
       ),
       body: ListView(
-        children: const [
-          ListTile(
-        title: Text('Elemento 1'),
-          ),
-          ListTile(
-        title: Text('Elemento 2'),
-          ),
-          ListTile(
-        title: Text('Elemento 3'),
-          ),
-          ListTile(
-        title: Text('Elemento 4'),
-          ),
+        children:  [
+         
+           // el operador spread (...) permite agregar una lista de widgets dentro de otro widget
+           ...options.map((game) =>ListTile(
+            title: Text(game),
+            trailing: const Icon(Icons.arrow_forward_ios_outlined),
+            ) ).toList(),
         ],
       ),
       );
