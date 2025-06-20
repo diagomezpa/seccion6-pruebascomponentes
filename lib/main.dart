@@ -18,8 +18,15 @@ class MyApp extends StatelessWidget {
         'alert': (BuildContext context) => const AlertScreen(),
         'card': (BuildContext context) => const CardScreen(),
 
-        
+
       },
+      onGenerateRoute: (RouteSettings settings) { // sirve para manejar rutas que no estan definidas
+        print('Ruta no definida: ${settings.name}');
+        return MaterialPageRoute(
+          builder: (context) => const AlertScreen(),
+        );
+      },
+
     );
   }
 }
