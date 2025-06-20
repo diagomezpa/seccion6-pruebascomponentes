@@ -1,9 +1,38 @@
 import 'package:flutter/material.dart';
 
+import '../models/models.dart';
 import '../screens/screens.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
+
+  static final menuOptions = <MenuOption>[
+    
+    MenuOption(
+      route: 'listview1',
+      name: 'ListView 1 Screen',
+      icon: Icons.list_alt_outlined,
+      screen: const Listview1Screen(),
+    ),
+    MenuOption(
+      route: 'listview2',
+      name: 'ListView 2 Screen',
+      icon: Icons.list_alt_outlined,
+      screen: const Listview2Screen(),
+    ),
+    MenuOption(
+      route: 'alert',
+      name: 'Alert Screen',
+      icon: Icons.warning_amber_outlined,
+      screen: const AlertScreen(),
+    ),
+    MenuOption(
+      route: 'card',
+      name: 'Card Screen',
+      icon: Icons.credit_card_outlined,
+      screen: const CardScreen(),
+    ),
+  ];
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'home'     : (BuildContext context) => const HomeScreen(),
