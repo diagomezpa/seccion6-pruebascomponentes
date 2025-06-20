@@ -25,6 +25,11 @@ class AppTheme {
     ),
 
     scaffoldBackgroundColor: Colors.black,
+
+    // TextButtonThemeData
+    textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom( foregroundColor: primary)
+    ),
   );
 
   

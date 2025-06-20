@@ -1,0 +1,1 @@
+export 'package:seccion6_componentes/widgets/custom_card_type_1.dart';
