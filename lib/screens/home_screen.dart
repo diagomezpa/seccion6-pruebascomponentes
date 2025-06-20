@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seccion6_componentes/router/app_routes.dart';
 import 'package:seccion6_componentes/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,10 +16,10 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: ListView.separated(
-        itemCount: 10,
+        itemCount: AppRoutes.menuOptions.length,
         itemBuilder:(context, index) => ListTile(
-          leading: const Icon( Icons.access_time_outlined),
-          title: const Text('Nombre de la ruta'),
+          leading: Icon( AppRoutes.menuOptions[index].icon, color: Colors.indigo,),
+          title:  Text(AppRoutes.menuOptions[index].name),
           onTap: (){
 
             // final route = MaterialPageRoute(// da lal ventaja de por ejemplo contolar como se sale de la pantalla animaciones etc
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             //Navigator.pushReplacement(context, route);
             //Navigator.pushNamed(context, 'listview13'); // Navegar a una ruta definida en el main.dart onGenerateRoute
 
-            Navigator.pushNamed(context, 'Listview1'); // Navegar a una ruta definida en el main.dart onGenerateRoute
+            Navigator.pushNamed(context, AppRoutes.menuOptions[index].route ); // Navegar a una ruta definida en el main.dart onGenerateRoute
           },
         ),
         separatorBuilder: (_, __) => const Divider(
